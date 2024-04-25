@@ -1,0 +1,102 @@
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'CustomFont', sans-serif;
+}
+.login-container > .img-box,
+.login-container > .login-box {
+    flex-basis: 50%;
+}
+
+.img-container {
+    text-align: center;
+}
+
+.login-container > .img-box {
+    background: url('../../images/loginAssests.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    width: 100%;
+}
+
+.loginImg {
+    width: 100%;
+    height: auto;
+}
+
+.login-container > .login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7d2c3b;
+}
+
+.login_details {
+    width: 420px;
+    padding: 40px;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.label {
+    display: inline-block;
+    margin: 4px 0;
+    color: #2d2520;
+}
+
+.login-logo {
+    width: 150px;
+    margin-bottom: 32px;
+    display: inline-block;
+    text-align: center;
+}
+
+.submit-btn {
+    height: 36px;
+    background: var(--Button-Gradient, linear-gradient(270deg, #d86b24 0.09%, #cd3533 86.21%));
+}
+
+.errAPI {
+    color: red;
+}
+
+/******************** mobile phones (sm) ********************/
+@media only screen and (max-width: 768px) {
+    /* .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #7d2c3b;
+    }
+    .login_details {
+      width: 320px;
+      margin: 40px;
+      padding: 20px;
+    }
+    .login-container > .img-box {
+      display: none;
+    } */
+    .img-box {
+        display: none;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #7d2c3b;
+    }
+
+    .login-container > .login-box {
+        width: 100% !important;
+    }
+    .login_details {
+        width: 320px;
+        margin: 40px;
+        padding: 20px;
+    }
+}

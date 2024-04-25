@@ -1,0 +1,126 @@
+.layout-wrapper {
+    display: flex;
+}
+.hide-sidebar-view {
+    background: var(--Linear-Button, linear-gradient(90deg, #d04240 1.56%, #d87438 99.91%));
+    width: 40px;
+    height: 100vh;
+    cursor: pointer;
+    padding-top: 16px;
+    text-align: center;
+    animation-name: slideOut;
+    transition: width 0.4s ease;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.sidebar-container {
+    height: 100vh;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: var(--Linear-Button, linear-gradient(90deg, #d04240 1.56%, #d87438 99.91%));
+    width: 256px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    animation-name: slideIn;
+    transition: width 0.4s ease;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+.collapsble-icon {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    cursor: pointer;
+}
+.icon-collapsble {
+    color: white;
+}
+.main-content {
+    width: calc(100vw - 256px);
+}
+.main-content-full {
+    width: calc(100vw - 40px);
+}
+
+.header {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.right-content {
+}
+.nav-item {
+    .nav-link {
+        display: flex;
+        align-items: center;
+    }
+}
+.sidebar-according-item {
+    background-color: inherit !important;
+    h2 {
+        button {
+            background-color: inherit !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            color: white !important;
+        }
+        .accordion-button:after {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+        }
+    }
+}
+// .accordion-body {
+//     padding: 10px !important;
+//     padding-bottom: 0 !important;
+// }
+
+.active-according-header {
+    background-color: white !important;
+
+    button {
+        color: black;
+    }
+}
+
+.active-marker::marker {
+    color: rgb(40, 243, 74);
+    font-size: 1.5em;
+}
+.active-sublink {
+    background-color: white;
+    color: black !important;
+    border-radius: 4px;
+}
+.image-selected {
+    width: 30px;
+    height: 30px;
+}
+.layout-container {
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+}
+.sidebar-nav {
+    height: 100%;
+    max-height: calc(100vh - 77px);
+    // overflow: auto;
+}
+// .sidebar-container::-webkit-scrollbar {
+//     width: 4px;
+// }
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 256px;
+    }
+}
+@keyframes slideOut {
+    from {
+        width: 256px;
+    }
+    to {
+        width: 40px;
+    }
+}

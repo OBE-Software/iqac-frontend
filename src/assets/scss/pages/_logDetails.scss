@@ -1,0 +1,22 @@
+.log-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    // width: 90%;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    &__info-field {
+        background-color: rgb(202, 202, 202);
+        color: black;
+        padding: 8px;
+        border-radius: 8px;
+        height: fit-content;
+    }
+
+    &__info-badge {
+        // display: inline;
+        width: fit-content;
+        margin-bottom: 16px;
+    }
+}

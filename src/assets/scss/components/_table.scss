@@ -1,0 +1,204 @@
+//
+// _table.scss
+//
+
+.table {
+    th {
+        font-weight: $font-weight-semibold;
+    }
+    .default-table-header {
+        background-color: rgba(243, 242, 233, 0.5) !important;
+    }
+    .table-light {
+        color: $body-color;
+        border-color: $table-border-color;
+        background-color: var(--#{$variable-prefix}light);
+    }
+
+    > thead {
+        border-color: $table-border-color;
+    }
+    > :not(:first-child) {
+        border-top-width: $table-border-width;
+    }
+    tr:nth-child(even) {
+        background-color: $gray-200;
+    }
+}
+.table td {
+    border: none !important;
+}
+.table-nowrap {
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
+
+// card table
+
+.table-card {
+    margin: (-$card-spacer-y) (-$card-spacer-x);
+
+    th,
+    td {
+        &:first-child {
+            padding-left: 16px;
+        }
+
+        &:last-child {
+            padding-right: 16px;
+        }
+    }
+
+    .table > :not(:first-child) {
+        border-top-width: $table-border-width;
+    }
+}
+td,
+td > div,
+td > div > div,
+td > p,
+td > span {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+td > span {
+    max-width: none;
+}
+
+@each $color, $value in $theme-colors {
+    .border-#{$color} {
+        &.table {
+            > thead {
+                border-color: $value !important;
+            }
+        }
+    }
+    .table-#{$color} {
+        &.table {
+            > thead {
+                border-bottom-color: lighten($value, 10%) !important;
+            }
+        }
+    }
+}
+
+.table {
+    .form-check {
+        padding-left: 0px;
+        margin-bottom: 0px;
+        .form-check-input {
+            margin-left: 0px;
+            margin-top: 0px;
+            float: none;
+            vertical-align: middle;
+        }
+    }
+}
+
+[data-layout-mode='dark'] {
+    .table-light {
+        background-color: var(--#{$variable-prefix}light);
+        color: var(--#{$variable-prefix}body-color);
+        th,
+        td {
+            background-color: var(--#{$variable-prefix}light);
+        }
+    }
+}
+.ref-mgmt-table-ht {
+    max-height: calc(100vh - 360px);
+}
+.dashboard-table-ht {
+    max-height: 400px;
+}
+.fixed-header > thead > tr > th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+.goal-header,
+.custom-table thead > tr {
+    background-color: rgba(243, 242, 233, 0.5) !important;
+}
+.goal-body > tr > td {
+    color: #212529 !important;
+}
+.custom-table td {
+    background: white;
+    border: 1px solid $gray-300 !important;
+}
+.custom-table thead > tr > th {
+    color: $text-muted !important;
+}
+.custom-table tbody > tr > td {
+    color: #212529;
+    font-weight: 500;
+}
+.custom-table-pdf {
+    border: 1px solid #38414a26 !important;
+}
+
+.custom-table-pdf thead > tr {
+    background-color: #f3f6f9 !important;
+    border: 1px solid #e9ebec !important;
+}
+
+.custom-table-pdf td {
+    background: white;
+    border: 1px solid #e9ebec !important;
+}
+.custom-table-pdf thead > tr > th {
+    color: #212529 !important;
+}
+.custom-table-pdf tbody > tr > td {
+    color: #212529;
+    font-weight: 500;
+}
+.action-td {
+    white-space: initial !important;
+}
+.action-td > p {
+    opacity: 0; /* Initially hide the child */
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+.action-td:hover > p {
+    opacity: 1; /* Show the child on hover */
+    visibility: visible;
+}
+.bg-lightRed {
+    background-color: #fdf2ef !important;
+}
+.max-width-400 {
+    max-width: 400px !important;
+}
+.action-td > p {
+    height: 0;
+    transition: height 0.2s;
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    -ms-transition: height 0.2s;
+    -o-transition: height 0.2s;
+}
+.action-td:hover > p {
+    margin: 10px 0;
+    height: 40px;
+}
+.MuiFormControlLabel-root,
+.MuiSwitch-root {
+    margin: 0 !important;
+}
+td > .label {
+    margin: 0 !important;
+}
+
+.permission-ansers > div:hover {
+    background-color: $table-active-bg;
+}
+.permission-ansers:nth-child(even) {
+}

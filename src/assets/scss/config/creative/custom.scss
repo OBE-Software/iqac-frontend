@@ -1,0 +1,525 @@
+/*
+Template Name: GroundGame Health - Admin & Dashboard Template
+Author: Themesbrand
+Website: https://themesbrand.com/
+Contact: support@themesbrand.com
+File: Custom Css File
+*/
+.css-b62m3t-container {
+    .css-1s2u09g-control {
+        background-color: $card-bg;
+        border-color: $input-border-color;
+        &:hover {
+            border-color: $input-border-color;
+        }
+    }
+    .css-1pahdxg-control {
+        background-color: $card-bg;
+        border-color: $border-color;
+        box-shadow: none;
+        &:hover {
+            border-color: $border-color !important;
+        }
+    }
+    .css-26l3qy-menu {
+        z-index: 10;
+        background-color: $dropdown-bg;
+        .css-1n7v3ny-option {
+            cursor: pointer;
+            background-color: $dropdown-link-hover-bg;
+            &:active {
+                background-color: $dropdown-link-hover-bg;
+            }
+        }
+    }
+    .css-1rhbuit-multiValue {
+        background-color: var(--#{$variable-prefix}light);
+    }
+    .css-12jo7m5 {
+        color: $heading-color;
+    }
+    .css-6j8wv5-Input,
+    .css-qc6sy-singleValue {
+        color: $heading-color;
+    }
+}
+.text-dark {
+    color: $gray-700 !important;
+}
+.text-gray-dark {
+    color: $gray-900 !important;
+}
+.text-light-yellow {
+    color: $lightYellow !important;
+}
+.ht-fitcontent {
+    height: fit-content;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.sortsymbol {
+    cursor: pointer;
+    opacity: 0.5;
+    height: 11px;
+    width: 11px;
+    margin-left: 5px;
+}
+.sortsymbol:hover {
+    opacity: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+    cursor: pointer !important;
+    background-color: #f5f5f5;
+    width: 15px;
+    height: 8px;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d8d8d8;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.overflow-x-none {
+    overflow-x: hidden;
+}
+.overflow-auto {
+    overflow: auto;
+}
+
+$sizes: 1000;
+// height
+@mixin height-classes {
+    @for $i from 1 through $sizes {
+        $height: $i * 1px;
+        .height-#{$i} {
+            height: $height;
+        }
+    }
+}
+@include height-classes;
+
+@mixin height-classes {
+    @for $i from 1 through $sizes {
+        $height: $i * 1vh;
+        .h-#{$i}-vh {
+            height: $height;
+        }
+    }
+}
+@include height-classes;
+
+// width
+@mixin width-classes {
+    @for $i from 1 through $sizes {
+        $width: $i * 1px;
+        .width-#{$i} {
+            width: $width;
+        }
+    }
+}
+@include width-classes;
+
+.edit-right {
+    position: absolute;
+    left: auto;
+    right: 12px;
+}
+.show-all-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.float-right {
+    float: right;
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+}
+.maxWidth-15 {
+    max-width: 15%;
+}
+$max-size: 100;
+// max-width in %
+@mixin max-width-classes {
+    @for $i from 1 through $max-size {
+        $max-width: $i * 1%;
+        .mxWidth-#{$i} {
+            max-width: $max-width;
+        }
+    }
+}
+@include max-width-classes;
+
+// width in %
+@mixin width-classes {
+    @for $i from 1 through $sizes {
+        $width: $i * 1%;
+        .w-#{$i} {
+            width: $width;
+        }
+    }
+}
+
+@include width-classes;
+.cardfixed-ht {
+    height: 20rem;
+    overflow: auto;
+    position: relative;
+}
+.member__resizer {
+    position: absolute;
+    bottom: 0;
+    cursor: row-resize;
+    height: 10px;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    // background-color: red;
+}
+
+.tabelCard-ht {
+    max-height: 20rem;
+    overflow: auto;
+}
+.custom-form-selection {
+    background: #efefef;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px 30px;
+    label {
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+    }
+}
+.custom-form-selection-active {
+    background: $secondary !important;
+}
+.label-active {
+    background: $yellow !important;
+}
+.border-input {
+    border: 1px solid var(--implify-input-border);
+}
+.border-color-muted {
+    border-color: $gray-300 !important;
+}
+.addsow__details {
+    overflow-x: scroll;
+}
+.addsow__details::-webkit-scrollbar {
+    // display: none;
+}
+.addsow__details > div {
+    min-width: 30%;
+
+    max-width: 100%;
+    margin-right: 1%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.addsow__details > div:last-child {
+    margin-right: 0;
+}
+.addSow__banner {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    left: -37px;
+    transform: rotate(-45deg);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.addSow__line {
+    width: 1px;
+    height: 50%;
+}
+.addSow__banner > span {
+    position: absolute;
+    bottom: 7px;
+    right: 50px;
+    color: white;
+    font-weight: bolder;
+}
+.text-overflow-lineclamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.text-overflow-lineclamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.need__value-container::-webkit-scrollbar {
+    display: none !important;
+}
+.assignment__search {
+    border-bottom: 2px solid $border-color;
+}
+.assignment__sidebar-navItem {
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 2px solid $light;
+
+    &:hover > div {
+        h6 {
+            color: white !important;
+        }
+        small {
+            color: $gray-400 !important;
+        }
+    }
+}
+.assignment__sidebar-navItem:hover {
+    background-color: $primary;
+}
+.selected__state {
+    background-color: $primary;
+    div {
+        h6 {
+            color: white !important;
+        }
+        small {
+            color: $gray-400 !important;
+        }
+    }
+}
+.notes-ht {
+    max-height: 105px;
+    overflow-y: auto;
+}
+
+#headerForPdf-notes,
+#headerForPdf-assessment {
+    display: none;
+    padding: 20px;
+}
+
+.text-gray500 {
+    color: $gray-500;
+}
+.display__none {
+    display: none;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: min-content;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-align: center;
+    &-checkbox {
+        display: none;
+    }
+    &-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 0 solid #bbb;
+        border-radius: 20px;
+        margin: 0;
+    }
+    &-inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+        &:before,
+        &:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 2rem;
+            padding: 0 1rem;
+            line-height: 2rem;
+            color: $white;
+            box-sizing: border-box;
+        }
+        &:before {
+            content: 'Sync';
+            background-color: $success;
+        }
+    }
+    &-inner:after {
+        content: 'Offline';
+        background-color: $orange;
+    }
+
+    &-checkbox:checked + &-label {
+        .toggle-switch-inner {
+            margin-left: 0;
+        }
+        .toggle-switch-switch {
+            right: 0px;
+        }
+    }
+}
+.k-grid-notes {
+    overflow-y: scroll;
+}
+
+.freeze-spinner {
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.sam-activity {
+    color: #4d8556;
+    background-color: #e8f3ea !important;
+    border-color: #d1e8d5;
+}
+
+.organisation-collapse {
+    border-left: 2px solid #adb5bd;
+    border-left-style: dotted;
+}
+.organisation-collapse > div > p {
+    border-bottom: 2px solid #adb5bd;
+    border-bottom-style: dotted;
+    width: 15px;
+    display: inline-block;
+}
+.powerbi-iframe {
+    z-index: 9999 !important;
+    display: inline-block !important;
+}
+
+.notify-item > a.active > button {
+    color: $primary !important;
+}
+
+.need__placeholder {
+    position: absolute !important;
+}
+.Embed-container {
+    // width: 95vw;
+    height: 84vh;
+}
+
+.small-loader {
+    width: 32px;
+    height: 32px;
+}
+.new-lines {
+    white-space: pre-wrap;
+}
+.custom-need-button {
+    padding: 10px;
+    background-color: inherit !important;
+}
+.custom-need-button:hover {
+    background-color: #deebff !important;
+}
+
+.counties-list {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.cover-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #eff2f761;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+
+.assmt-axis-label {
+    fill: $dark !important;
+}
+.barchat-container {
+    // height: 200px;
+    overflow-y: hidden;
+}
+
+.disable-img {
+    filter: grayscale(100%);
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.max-height-400 {
+    max-height: 400px;
+}
+.min-height-50 {
+    min-height: 50px;
+}
+.chat-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mw-max {
+    max-width: max-content !important;
+}
+.overflow-x {
+    overflow-x: auto;
+}
+.pbi-arrow-icon-large {
+    position: absolute;
+    top: 20%;
+    left: -2%;
+}
+.pbi-arrow-icon-small {
+    position: absolute;
+    top: 20%;
+    left: -12%;
+}
+.manager-feedback-section {
+    max-height: 100px;
+    overflow-y: auto;
+}
+.w-max-content {
+    width: max-content !important;
+}
+.w-min-content {
+    width: min-content !important;
+}

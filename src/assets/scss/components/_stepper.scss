@@ -1,0 +1,23 @@
+.MuiStep-horizontal {
+    box-shadow: 2px 2px 16px rgba(56, 65, 74, 0.15) !important;
+    padding: 60px 30px;
+    margin-right: 30px !important;
+}
+.MuiStepConnector-horizontal {
+    top: 71px !important;
+    left: calc(-50% + -10px) !important;
+}
+.MuiStepLabel-label {
+    font-weight: 600 !important;
+    color: $gray-600 !important;
+    font-family: $font-family-primary !important;
+}
+.MuiStepLabel-label.Mui-completed {
+    color: $primary !important;
+}
+.MuiSvgIcon-root.Mui-active {
+    color: rgba(0, 0, 0, 0.38) !important;
+}
+.MuiSvgIcon-root.Mui-completed {
+    color: $success !important;
+}

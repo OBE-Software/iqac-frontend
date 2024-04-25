@@ -1,0 +1,257 @@
+.add-time-slots-container {
+    padding: 16px;
+    background-color: white;
+    border-radius: 8px;
+    width: 32vw;
+}
+
+.add-time-slots-container-individual {
+    padding: 16px;
+    background-color: white;
+    border-radius: 8px;
+    width: 28vw;
+}
+
+.label-date {
+    font-size: 16px;
+    color: #343434;
+}
+
+.date {
+    padding: 8px;
+}
+
+.select {
+    width: 100%;
+    padding: 16px 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin-top: 8px;
+}
+
+.time-slots-details-container {
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px var(--xs);
+}
+
+.calendar-time-slots-container {
+    display: flex;
+    height: 60vh;
+}
+
+.calendar-time-slots-container > div {
+    flex-basis: 50%;
+    /* border: 1px solid red; */
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ccc;
+    position: relative;
+}
+
+.round {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: maroon;
+}
+
+.round-info {
+    background-color: #d87438;
+}
+
+.highlight-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.hightlight-color-information {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    /* border: 1px solid red; */
+}
+
+.time-slots-view {
+    padding: 16px;
+    border-radius: 4px;
+    overflow-y: scroll;
+}
+
+.btn-add {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d87438;
+    border-radius: 4px;
+    background-color: transparent;
+    text-transform: uppercase;
+    align-items: center;
+    color: #d87438;
+    cursor: pointer;
+}
+
+.date-heading {
+    color: #d87438;
+}
+
+.show-all-time-slots-container {
+    height: 200px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    overflow-y: scroll;
+    margin-top: 16px;
+    padding: 12px;
+}
+.show-all-time-slots-container > p {
+    height: min-content !important;
+}
+
+.time-slots-chips-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.time-slots-chips-container > p {
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.highlighted-date {
+    background-color: #d87438 !important;
+    color: white !important;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 40px;
+    width: 40px; */
+    /* Optional: Change text color for better visibility */
+}
+
+.current-date {
+    background-color: maroon !important;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+}
+
+.react-calendar {
+    border: none !important;
+}
+
+.rs-picker-menu {
+    z-index: 9999999999999 !important;
+}
+
+.custom-date-picker {
+    width: 100%;
+}
+
+.confirmation-modal {
+    background-color: white;
+    padding: 24px;
+    border-radius: 4px;
+}
+
+.btn-slots {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    transition: all 0.3s ease-out;
+    padding: 24px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    width: 200px;
+    height: 225px;
+    cursor: pointer;
+}
+
+.btn-slots:hover {
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.individual-slots-btn {
+}
+
+.multiple-slots-btn {
+}
+
+.magicslot-png {
+    height: 60px;
+}
+
+.btn-infos {
+    font-size: 10px;
+    opacity: 0.4;
+}
+
+.time-slots-view-chip {
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.icon {
+    font-size: 60px !important;
+    color: #d87438;
+}
+
+.close-icons {
+    font-size: 12px;
+    color: red;
+    cursor: pointer;
+}
+
+.timePicker-width {
+    width: 120px;
+}
+
+.div-date-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-mui {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.btn-containre {
+    margin-top: 24px;
+}
+
+.session {
+    width: 100%;
+    padding: 8px 4px;
+    background: transparent;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-top: 12px;
+    border-radius: 4px;
+}

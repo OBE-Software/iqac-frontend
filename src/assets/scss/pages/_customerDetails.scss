@@ -1,0 +1,77 @@
+.main-screen {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.details-container {
+    width: 100%;
+}
+
+.customer-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    // width: 90%;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.body-info {
+    margin-bottom: 1rem;
+}
+
+summary {
+    font-weight: 600;
+
+    padding: 0.5rem;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+    width: 100%;
+
+    background-color: rgb(240, 240, 240);
+
+    border-radius: 4px;
+
+    margin-bottom: 0.5rem;
+}
+
+.body-info-summary {
+    margin-top: 0.5rem;
+
+    border-radius: 0 0 8px 8px;
+
+    background-color: rgb(250, 250, 250);
+
+    padding: 8px;
+}
+
+.table-customer {
+    width: 100%;
+}
+
+.table-customer-row {
+    border: 1px solid black;
+}
+
+.table-customer-row > th {
+    background-color: rgb(240, 240, 240);
+
+    padding: 8px;
+}
+
+.table-customer-row1 > td {
+    padding: 8px;
+
+    background-color: white;
+}
+
+.title-info {
+    color: gray;
+
+    margin-bottom: 4px;
+}
