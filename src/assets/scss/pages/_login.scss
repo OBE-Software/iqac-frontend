@@ -14,11 +14,12 @@
 }
 
 .login-container > .img-box {
-    background: url('../../images/loginAssests.webp');
+    background: url('../../images/Cityscapes\ Downtown.png'), linear-gradient(#3364FF, #fff);
     background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.7;
+    background-size: contain;
     width: 100%;
+    background-position-y: bottom;
+    flex: 0.7;
 }
 
 .loginImg {
@@ -30,7 +31,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #7d2c3b;
+    background-color: #fff;
+    flex: 0.3;
 }
 
 .login_details {

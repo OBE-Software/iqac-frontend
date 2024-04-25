@@ -4,7 +4,7 @@
 
 @each $color, $value in $theme-colors {
     .bg-soft-#{$color} {
-        background-color: rgba(($value), 0.18) !important;
+        background-color: rgb(($value), 0.12) !important;
     }
 }
 

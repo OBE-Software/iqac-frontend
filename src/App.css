@@ -28,11 +28,43 @@
   color: #61dafb;
 }
 
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e7e7e7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #002bb9;
+}
+
+.titleCase {
+  text-transform: capitalize;
+}
+
+.hide {
+  display: none;
 }

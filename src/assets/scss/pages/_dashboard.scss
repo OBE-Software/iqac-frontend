@@ -1,9 +1,20 @@
-.assigned-status {
-    background-color: #ffd6e9 !important;
+.approved-status {
+    background-color: #C2FFD9 !important;
+    color: #007A2F !important;
 }
-.ongoing-status {
-    background-color: #e7d4ff !important;
+.inDraft-status {
+    background-color: #C2F3FF !important;
+    color: #00627A !important;
 }
-.completed-status {
-    background-color: #e1ffe6 !important;
+.rejected-status {
+    background-color: #FFC7C2 !important;
+    color: #7A0A00 !important;
+}
+.notStarted-status {
+    background-color: #E0E0E0 !important;
+    color: #3D3D3D !important;
+}
+.submitted-status {
+    background-color: #FFE8C2 !important;
+    color: #7A4C00 !important;
 }
