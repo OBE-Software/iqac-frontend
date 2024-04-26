@@ -14,7 +14,7 @@ const IOSSwitch = styled((props) => <Switch focusVisibleClassName=".Mui-focusVis
             transform: 'translateX(16px)',
             color: '#fff',
             '& + .MuiSwitch-track': {
-                backgroundColor: theme.palette.mode === 'dark' ? '#2ECA45' : '#d87438',
+                backgroundColor: theme.palette.mode === 'dark' ? '#3364FF' : '#3364FF',
                 opacity: 1,
                 border: 0
             },
