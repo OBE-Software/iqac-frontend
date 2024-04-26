@@ -6,6 +6,7 @@ import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Container, Un
 import { SelectSearchValInStore } from '../Store/commonStore/selectors';
 import { addCurrentNavToStore, addCurrentSubNavToStore } from '../Store/commonStore/actions';
 import { navData } from './layoutUtils';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const Sidebar = ({ setterSidebar }) => {
     const currentNav = useSelector((state) => SelectSearchValInStore(state, 'currentNav'));
@@ -29,6 +30,13 @@ const Sidebar = ({ setterSidebar }) => {
         } else {
             setOpen(id);
         }
+    };
+
+    const profileNavItem = {
+        id: 'profile',
+        label: 'Profile',
+        icon: () => <AccountCircleOutlinedIcon fontSize="small" />,
+        link: '/profile'
     };
 
     return (
@@ -106,6 +114,26 @@ const Sidebar = ({ setterSidebar }) => {
                             )
                         )}
                     </ul>
+                    {/* <ul className='sidebar-bottom'>
+                        <li
+                            className={`nav-item px-3 ${currentNav === profileNavItem.label && 'bg-white rounded-3'}`}
+                            // className={'nav-item px-3'}
+                            onClick={() => {
+                                handleClickMainItem(profileNavItem);
+                            }}
+                        >
+                            <Link
+                                className={`nav-link menu-link ${
+                                    currentNav === profileNavItem.label ? 'text-black' : 'text-white'
+                                }  fs-14 fw-light`}
+                                to={profileNavItem.link ? profileNavItem.link : '/#'}
+                            >
+                                {/* <i className={item.icon + ' me-2'}></i>  */}
+                    {/* {profileNavItem.icon()} */}
+                    {/* <span className="ms-2">{profileNavItem.label}</span> */}
+                    {/* </Link> */}
+                    {/* </li> */}
+                    {/* </ul> */}
                 </Container>
             </div>
         </React.Fragment>

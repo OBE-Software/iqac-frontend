@@ -23,6 +23,7 @@ import Notification from '../pages/Notification';
 import TestDescription from '../pages/Tests/TestDescription';
 import Logger from '../pages/Logs';
 import ViewLogComponent from '../pages/Logs/ViewLogComponent';
+import HelpVideosPage from '../pages/HelpVideos';
 
 export const allRoutesOfApplication = (userData) => {
     let routes = [];
@@ -54,6 +55,7 @@ export const allRoutesOfApplication = (userData) => {
             { path: 'time-slots', Component: TimeSlots },
             { path: 'logs', Component: Logger },
             { path: 'logs/:id', Component: ViewLogComponent },
+            { path: 'help-vids', Component: HelpVideosPage },
             { path: '*', Component: Cover404 }
         ];
     } else {

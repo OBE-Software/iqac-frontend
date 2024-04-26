@@ -11,7 +11,12 @@ import {
     Science,
     NotificationsActive
 } from '@mui/icons-material';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import TableViewOutlinedIcon from '@mui/icons-material/TableViewOutlined';
 import DataArrayIcon from '@mui/icons-material/DataArray';
+import DomainOutlinedIcon from '@mui/icons-material/DomainOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 
 export const navData = (roleName, profileData) => {
     let navItems = [];
@@ -206,36 +211,42 @@ export const superAdminSidePanelData = [
         link: '/dashboard'
     },
     {
-        id: 'bookings',
-        label: 'Bookings',
-        icon: () => <LibraryBooks fontSize="small" />,
-        link: '/bookings'
-    },
-    {
-        id: 'labtests',
-        label: 'Lab Tests',
+        id: 'datcollection',
+        label: 'Data Collection',
         icon: () => <Science fontSize="small" />,
         link: '/#',
         subItems: [
             {
-                id: 'Tests',
-                label: 'Tests',
-                link: '/lab-test',
-                parentId: 'labtests'
+                id: 'qifqualitative',
+                label: 'QIF Qualitative',
+                link: '/qif-qualitative',
+                parentId: 'datcollection'
+            },
+            {
+                id: 'qifquantitative',
+                label: 'QIF Quantitative',
+                link: '/qif-quantitative',
+                parentId: 'datcollection'
             }
         ]
     },
     {
-        id: 'diagnosticsCenter',
-        label: 'Diagnostics Center',
-        icon: () => <DomainAdd fontSize="small" />,
-        link: '/diagnostics-centers'
+        id: 'qifview',
+        label: 'QIF View',
+        icon: () => <TableViewOutlinedIcon fontSize="small" />,
+        link: '/qif-view'
     },
     {
-        id: 'branch',
-        label: 'Branch',
-        icon: () => <AcUnit fontSize="small" />,
-        link: '/branch'
+        id: 'universities',
+        label: 'Universities',
+        icon: () => <DomainOutlinedIcon fontSize="small" />,
+        link: '/universities'
+    },
+    {
+        id: 'colleges',
+        label: 'Colleges',
+        icon: () => <SchoolOutlinedIcon fontSize="small" />,
+        link: '/colleges'
     },
     {
         id: 'employees',
@@ -256,9 +267,9 @@ export const superAdminSidePanelData = [
                 parentId: 'employees'
             },
             {
-                id: 'EmployeeDepartment',
-                label: 'Employee Department',
-                link: '/employee-department',
+                id: 'departments',
+                label: 'Departments',
+                link: '/department',
                 parentId: 'employees'
             }
         ]
@@ -290,50 +301,6 @@ export const superAdminSidePanelData = [
         link: '/payments'
     },
     {
-        id: 'timeslots',
-        label: 'Time Slots',
-        icon: () => <AccessTimeFilled fontSize="small" />,
-        link: '/time-slots'
-    },
-    {
-        id: 'testmasterdata',
-        label: 'Test Master Data',
-        icon: () => <Person fontSize="small" />,
-        link: '/#',
-        subItems: [
-            {
-                id: 'department',
-                label: 'Department',
-                link: '/test-department',
-                parentId: 'testmasterdata'
-            },
-            {
-                id: 'categories',
-                label: 'Categories',
-                link: '/test-categories',
-                parentId: 'testmasterdata'
-            },
-            {
-                id: 'sampletypes',
-                label: 'Sample Types',
-                link: '/test-samples',
-                parentId: 'testmasterdata'
-            },
-            {
-                id: 'testtype',
-                label: 'Test Type',
-                link: '/test-type',
-                parentId: 'testmasterdata'
-            }
-            // {
-            //     id: 'notification',
-            //     label: 'Notification',
-            //     link: '/notification',
-            //     parentId: 'testmasterdata'
-            // }
-        ]
-    },
-    {
         id: 'permission',
         label: 'Permissions',
         icon: () => <AppRegistration fontSize="small" />,
@@ -350,13 +317,17 @@ export const superAdminSidePanelData = [
         label: 'Logs',
         icon: () => <DataArrayIcon fontSize="small" />,
         link: '/logs'
+    },
+    {
+        id: 'helpvideos',
+        label: 'Help Videos',
+        icon: () => <VideoLibraryIcon fontSize="small" />,
+        link: '/help-vids'
+    },
+    {
+        id: 'tour',
+        label: 'Tour',
+        icon: () => <InfoOutlinedIcon fontSize="small" />,
+        link: '/tour'
     }
-    /*
-     * {
-     *     id: 'package',
-     *     label: 'Packages',
-     *     icon: () => <LocalShipping fontSize="small" />,
-     *     link: '/package'
-     * }
-     */
 ];

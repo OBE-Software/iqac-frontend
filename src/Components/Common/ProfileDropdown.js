@@ -8,6 +8,8 @@ import _ from 'lodash';
 import { useNavigate } from 'react-router-dom';
 import { SelectSearchValInStore } from '../../Store/commonStore/selectors';
 import { useSelector } from 'react-redux';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const ProfileDropdown = () => {
     const navigate = useNavigate();
@@ -49,14 +51,29 @@ const ProfileDropdown = () => {
                     <DropdownItem
                         onClick={() => {
                             // history.push('/');
+                            navigate('/profile');
+                        }}
+                        className="d-flex align-items-center justify-content-between"
+                    >
+                        <span className="align-middle" data-key="t-logout">
+                            Profile
+                        </span>
+                        {/* <i className="ri-logout-box-r-line text-muted fs-16 align-middle me-1"></i> */}
+                        <AccountCircleOutlinedIcon />
+                    </DropdownItem>
+                    <DropdownItem
+                        onClick={() => {
+                            // history.push('/');
                             navigate('/login');
                             logoutAction();
                         }}
+                        className="d-flex align-items-center justify-content-between"
                     >
-                        <i className="ri-logout-box-r-line text-muted fs-16 align-middle me-1"></i>
                         <span className="align-middle" data-key="t-logout">
                             Logout
                         </span>
+                        <LogoutOutlinedIcon />
+                        {/* <i className="ri-logout-box-r-line text-muted fs-16 align-middle me-1"></i> */}
                     </DropdownItem>
                 </DropdownMenu>
             </Dropdown>

@@ -121,7 +121,7 @@ const Dashboard = () => {
             {/* <ExportToPdf data={UserData} /> */}
             <Card className="box-shadow-card">
                 <div className="p-2 my-2 pe-4 w-20">
-                    <label htmlFor="date">Filter Bookings</label>
+                    <label htmlFor="date">Filter Data</label>
                     <Flatpickr
                         name="date"
                         id="Date"
@@ -158,9 +158,7 @@ const Dashboard = () => {
                 </CardBody>
             </Card>
             <Row>
-                <Col xs={6} sm={6} md={6} lg={6} xl={6} xxl={6} className="">
-                    {/* <Card className="box-shadow-card mb-0">
-                        <CardBody> */}
+                <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} className="">
                     <ActionsTable
                         tabelID="orgUsersTable"
                         cardHeader={() => <h5>New Customers in this month</h5>}
@@ -176,29 +174,6 @@ const Dashboard = () => {
                         emptyMessage={'no records found'}
                         tableLoader
                     />
-                    {/* </CardBody>
-                    </Card> */}
-                </Col>
-                <Col xs={6} sm={6} md={6} lg={6} xl={6} xxl={6} className="">
-                    {/* <Card className="box-shadow-card mb-0">
-                        <CardBody> */}
-                    <ActionsTable
-                        tabelID="orgUsersTable"
-                        cardHeader={() => <h5>All Recent Transactions</h5>}
-                        columns={dashboardTransactionsSchema}
-                        data={paymentsData}
-                        allDataObj={GetDashboardTransactionsAPIAPIData?.[DataKey]}
-                        loading={GetDashboardTransactionsAPIAPIData?.[FetchingKey]}
-                        customPageSize={10}
-                        divClass="table-responsive table-card dashboard-table-ht"
-                        tableClass="table table-borderless table-centered align-middle fixed-header"
-                        theadClass="default-table-header text-muted"
-                        onPageChange={(p, rowsPerPage) => handlePageChangeForTrans(p, rowsPerPage)}
-                        emptyMessage={'no records found'}
-                        tableLoader
-                    />
-                    {/* </CardBody>
-                    </Card> */}
                 </Col>
             </Row>
         </div>
