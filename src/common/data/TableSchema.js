@@ -1202,6 +1202,75 @@ const loggerSchema = [
         isLink: true
     }
 ];
+
+const universitiesSchema = [
+    {
+        Header: 'Name',
+        accessor: 'universityName',
+        sortable: false,
+        customCell: true,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Phone Number',
+        accessor: 'phoneNumber',
+        sortable: false,
+        customCell: true,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Email',
+        accessor: 'email',
+        sortable: false,
+        customCell: true,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Address',
+        accessor: 'address',
+        sortable: false,
+        customCell: true,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'City',
+        accessor: 'city',
+        sortable: false,
+        customCell: true,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'State',
+        accessor: 'state',
+        sortable: false,
+        customCell: true,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Status',
+        accessor: 'status',
+        sortable: false,
+        width: '5%',
+        thClass: 'text-overflow',
+        customCell: true,
+        fieldType: 'status'
+    },
+    {
+        Header: 'Actions',
+        accessor: '',
+        customCell: true,
+        fieldType: 'actions',
+        sortable: false,
+        width: '5%',
+        isLink: true
+    }
+];
 export {
     branchSchema,
     centerSchema,
@@ -1223,5 +1292,6 @@ export {
     permissionAddSchema,
     notificationAddSchema,
     PermissionRoleSchema,
-    loggerSchema
+    loggerSchema,
+    universitiesSchema
 };

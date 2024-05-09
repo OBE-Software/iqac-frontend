@@ -33,7 +33,7 @@
         "no-unused-vars": "off",
         "no-extra-boolean-cast": 0,
         "no-inline-styles/no-inline-styles": 2,
-        "linebreak-style": ["warn", "unix"],
+        // "linebreak-style": ["warn", "unix"],
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
         // "no-console": 2,

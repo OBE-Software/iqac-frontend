@@ -742,6 +742,16 @@ export const getLogDetailsAPI = {
     storeKey: 'getLogDetailsAPI'
 };
 
+export const getAllUniversitiesAPI = {
+    url: 'universities/all',
+    method: 'GET',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'getAllUniversitiesAPI'
+};
+
 const CommonAPIs = [
     GetAllCentersAPI,
     GetAllCentersAPI,
@@ -788,6 +798,7 @@ const CommonAPIs = [
     GetAllNotificationsAPI,
     SaveNotificationAPI,
     getAllLogsAPI,
-    getLogDetailsAPI
+    getLogDetailsAPI,
+    getAllUniversitiesAPI
 ];
 export default CommonAPIs;

@@ -24,6 +24,8 @@ import TestDescription from '../pages/Tests/TestDescription';
 import Logger from '../pages/Logs';
 import ViewLogComponent from '../pages/Logs/ViewLogComponent';
 import HelpVideosPage from '../pages/HelpVideos';
+import { Component } from 'react';
+import Universities from '../pages/University';
 
 export const allRoutesOfApplication = (userData) => {
     let routes = [];
@@ -56,6 +58,7 @@ export const allRoutesOfApplication = (userData) => {
             { path: 'logs', Component: Logger },
             { path: 'logs/:id', Component: ViewLogComponent },
             { path: 'help-vids', Component: HelpVideosPage },
+            { path: 'universities', Component: Universities },
             { path: '*', Component: Cover404 }
         ];
     } else {
