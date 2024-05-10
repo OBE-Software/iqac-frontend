@@ -42,9 +42,6 @@ const Sidebar = ({ setterSidebar }) => {
     return (
         <React.Fragment>
             <div className="sidebar-container">
-                <div className="collapsble-icon" onClick={() => setterSidebar(false)}>
-                    <SwapHorizontalCircleIcon sx={{ width: '32px', height: '32px' }} className="icon-collapsble" />
-                </div>
                 {<h4 className="text-white my-5 fw-light ps-3 titleCase">{roleData?.roleName ? roleData?.roleName : 'AMS Admin'}</h4>}
                 <Container fluid className="sidebar-nav">
                     <ul className="navbar-nav" id="navbar-nav">

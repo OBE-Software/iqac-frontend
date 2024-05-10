@@ -41,7 +41,7 @@
     width: calc(100vw - 256px);
 }
 .main-content-full {
-    width: calc(100vw - 40px);
+    width: calc(100vw);
 }
 
 .header {
@@ -121,6 +121,6 @@
         width: 256px;
     }
     to {
-        width: 40px;
+        width: 0px;
     }
 }
