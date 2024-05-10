@@ -1266,6 +1266,70 @@ const universitiesSchema = [
         isEdit: true
     }
 ];
+
+const collegeSchema = [
+    {
+        Header: 'Name',
+        accessor: 'collegeName',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Phone Number',
+        accessor: 'phoneNumber',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Email',
+        accessor: 'email',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Address',
+        accessor: 'address',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'City',
+        accessor: 'city',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'State',
+        accessor: 'state',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Status',
+        accessor: 'status',
+        sortable: false,
+        width: '5%',
+        thClass: 'text-overflow',
+        fieldType: 'status',
+        customCell: true
+    },
+    {
+        Header: 'Actions',
+        accessor: '',
+        customCell: true,
+        fieldType: 'actions',
+        sortable: false,
+        width: '5%',
+        isLink: true,
+        isEdit: true
+    }
+];
 export {
     branchSchema,
     centerSchema,
@@ -1288,5 +1352,6 @@ export {
     notificationAddSchema,
     PermissionRoleSchema,
     loggerSchema,
-    universitiesSchema
+    universitiesSchema,
+    collegeSchema
 };

@@ -784,6 +784,47 @@ export const getUniversityDetailsAPI = {
     storeKey: 'getUniversityDetailsAPI'
 };
 
+// COLLEGE APIS ------------------------------------------------------------------------------------------------
+export const getAllCollegesAPI = {
+    url: 'colleges/all',
+    method: 'GET',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'getAllCollegesAPI'
+};
+
+export const createCollegeAPI = {
+    url: 'colleges/create',
+    method: 'POST',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'createCollegeAPI'
+};
+
+export const updateCollegeAPI = {
+    customURLNeeded: true,
+    method: 'PATCH',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'updateCollegeAPI'
+};
+
+export const getCollegeDetailsAPI = {
+    customURLNeeded: true,
+    method: 'GET',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'getCollegeDetailsAPI'
+};
+
 const CommonAPIs = [
     GetAllCentersAPI,
     GetAllCentersAPI,
@@ -833,6 +874,10 @@ const CommonAPIs = [
     getLogDetailsAPI,
     getAllUniversitiesAPI,
     createUniversityAPI,
-    getUniversityDetailsAPI
+    getUniversityDetailsAPI,
+    getCollegeDetailsAPI,
+    getAllCollegesAPI,
+    updateCollegeAPI,
+    createCollegeAPI
 ];
 export default CommonAPIs;

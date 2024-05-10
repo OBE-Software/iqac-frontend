@@ -133,3 +133,11 @@ export const updateUniversityAPIURL = (id) => {
 export const getUniversityDetailsAPIURL = (id) => {
     return 'universities/' + id;
 };
+
+export const updateCollegeAPIURL = (id) => {
+    return 'colleges/' + id + '/update';
+};
+
+export const getCollegeDetailsAPIURL = (id) => {
+    return 'colleges/' + id;
+};

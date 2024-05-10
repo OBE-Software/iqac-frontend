@@ -27,6 +27,7 @@ import HelpVideosPage from '../pages/HelpVideos';
 import { Component } from 'react';
 import Universities from '../pages/University';
 import ViewUniversityComponent from '../pages/University/ViewUniversityComponent';
+import College from '../pages/College';
 
 export const allRoutesOfApplication = (userData) => {
     let routes = [];
@@ -61,6 +62,7 @@ export const allRoutesOfApplication = (userData) => {
             { path: 'help-vids', Component: HelpVideosPage },
             { path: 'universities', Component: Universities },
             { path: 'universities/:id', Component: ViewUniversityComponent },
+            { path: 'colleges', Component: College },
             { path: '*', Component: Cover404 }
         ];
     } else {
