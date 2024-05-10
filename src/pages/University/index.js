@@ -3,15 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import BreadCrumb from '../../Components/Common/BreadCrumb';
-import { getAllUniversitiesAPI } from '../../helpers/APIs/CommonAPIs';
+import { getAllUniversitiesAPI, updateUniversityAPI } from '../../helpers/APIs/CommonAPIs';
 import { SelectFullStateOfThisAPI } from '../../Store/callAPI/selectors';
-import { callAPIAction } from '../../Store/callAPI/actions';
-import { DataKey, FetchingKey } from '../../Store/callAPI/allAPIs';
+import { callAPIAction, removeAPIDataAction } from '../../Store/callAPI/actions';
+import { DataKey, ErrorKey, FetchingKey } from '../../Store/callAPI/allAPIs';
 import ActionsTable from '../../Components/Common/ActionsTable';
 import { universitiesSchema } from '../../common/data/TableSchema';
 import UniversitiesHeader from './UniversitiesHeader';
 import AddUniversity from './AddUniversity';
 import { PrepareEditUniversityObj, addUniversityIntialValues } from './universityUtils';
+import { updateUniversityAPIURL } from '../../helpers/APIs/CustomURL';
+import { ShowErrMsg } from '../../Components/Hooks/UserHooks';
+import { toast } from 'react-toastify';
 
 const Universities = () => {
     const [getAllUniversities, setAllUniversities] = useState([]);
@@ -23,6 +26,7 @@ const Universities = () => {
     const [formIntialValues, setFormIntialValues] = useState({ ...addUniversityIntialValues });
 
     const GetAllUniversitiesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllUniversitiesAPI));
+    const UpdateUniversityAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, updateUniversityAPI));
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -37,11 +41,25 @@ const Universities = () => {
         if (GetAllUniversitiesAPIData?.[DataKey]?.isSuccess) {
             const data = GetAllUniversitiesAPIData?.[DataKey]?.data;
             setAllUniversities(data);
-            console.log(data);
+            // console.log(data);
         } else {
             setAllUniversities([]);
         }
     }, [GetAllUniversitiesAPIData]);
+
+    useEffect(() => {
+        if (UpdateUniversityAPIData?.[DataKey]?.isSuccess) {
+            toast.success('University Updated Successfully');
+            removeAPIDataAction('updateUniversityAPI');
+            const queryParams = {
+                page: pageNumber,
+                pageSize: rowsPerPage
+            };
+            callAPIAction(getAllUniversitiesAPI, null, null, queryParams);
+        } else if (UpdateUniversityAPIData?.[ErrorKey] && !UpdateUniversityAPIData[DataKey]?.isSuccess) {
+            ShowErrMsg(UpdateUniversityAPIData, 'updateUniversityAPI');
+        }
+    }, [UpdateUniversityAPIData]);
 
     const handlePageChange = (p, rows) => {
         const queryParams = {
@@ -84,6 +102,13 @@ const Universities = () => {
         setFormIntialValues({ ...addUniversityIntialValues });
     };
 
+    const handleSwitch = (e, row) => {
+        callAPIAction(updateUniversityAPI, updateUniversityAPIURL(row.original._id), {
+            ...row.original,
+            status: row.original.status === 1 ? 2 : 1
+        });
+    };
+
     return (
         <div className="p-5 layout-container">
             <Container fluid className="p-0">
@@ -123,7 +148,7 @@ const Universities = () => {
                     tableLoader
                     showSelectAllOption={true}
                     handleActionClick={handleActionClick}
-                    // handleSwith={handleSwith}
+                    handleSwith={handleSwitch}
                     // isActionEdit={profileData.roleData === 1 ? true : permissionData.actions.edit}
                 />
             </Container>

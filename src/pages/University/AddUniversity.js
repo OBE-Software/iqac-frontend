@@ -26,7 +26,7 @@ const AddUniversity = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsP
         formData.append('universityName', values.universityName);
         formData.append('address', values.address);
         formData.append('city', values.city);
-        formData.append('state', values.state?.id);
+        formData.append('state', values.state?.name);
         formData.append('country', values.country);
         formData.append('countryCode', values.countryCode);
         formData.append('phoneNumber', values.phoneNumber);
@@ -57,7 +57,7 @@ const AddUniversity = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsP
 
     useEffect(() => {
         if (UpdateUniversityAPIData?.[DataKey]?.isSuccess) {
-            toast.success('Branch Updated Successfully');
+            toast.success('University Updated Successfully');
             onCloseClick();
             removeAPIDataAction('updateUniversityAPI');
             const queryParams = {

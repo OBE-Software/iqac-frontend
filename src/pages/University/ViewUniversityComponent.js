@@ -19,7 +19,7 @@ const ViewUniversityComponent = () => {
     const profileData = useSelector((state) => SelectSearchValInStore(state, 'profileData'));
     const roleData = useSelector((state) => SelectSearchValInStore(state, 'roleData'));
     const permissionData = profileData?.permissionData && profileData.permissionData.find((item) => item.module.toLowerCase() === 'logs');
-    const [isAccordionOpen, setAccordionOpen] = useState('1');
+    const [isAccordionOpen, setAccordionOpen] = useState('');
 
     useEffect(() => {
         callAPIAction(getUniversityDetailsAPI, getUniversityDetailsAPIURL(id), null);
@@ -29,17 +29,17 @@ const ViewUniversityComponent = () => {
         if (getUniversityDetailsApiData?.[DataKey]?.isSuccess) {
             const data = getUniversityDetailsApiData?.[DataKey]?.data;
             setUniversityDetails(data);
-            console.log(')))))))', data);
+            // console.log(')))))))', data);
         } else {
             setUniversityDetails({});
         }
     }, [getUniversityDetailsApiData]);
 
-    const toggleAccordion = (id) => {
-        if (open === id) {
+    const toggleAccordion = (accordionId) => {
+        if (isAccordionOpen === accordionId) {
             setAccordionOpen();
         } else {
-            setAccordionOpen(id);
+            setAccordionOpen(accordionId);
         }
     };
 
@@ -111,17 +111,3 @@ const ViewUniversityComponent = () => {
 };
 
 export default ViewUniversityComponent;
-
-// address: 'B-2, near Dhoon Public School, Kusum Vihar, Koyla Nagar, Dhanbad, Jharkhand 826005, India';
-// city: 'Dhanbad';
-// country: 'India';
-// countryCode: '+91';
-// createdAt: '2024-05-10T07:10:16.983Z';
-// email: 'info@BBMKU.in';
-// phoneNumber: '9304138016';
-// state: '10';
-// status: 1;
-// universityColleges: [];
-// universityEmployees: [];
-// universityName: 'BBMKU University';
-// updatedAt: '2024-05-10T07:10:16.983Z';

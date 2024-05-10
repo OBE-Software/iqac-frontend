@@ -1252,7 +1252,8 @@ const universitiesSchema = [
         sortable: false,
         width: '5%',
         thClass: 'text-overflow',
-        fieldType: 'status'
+        fieldType: 'status',
+        customCell: true
     },
     {
         Header: 'Actions',
@@ -1261,7 +1262,8 @@ const universitiesSchema = [
         fieldType: 'actions',
         sortable: false,
         width: '5%',
-        isLink: true
+        isLink: true,
+        isEdit: true
     }
 ];
 export {
