@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 
 export const AddCollegeSchema = yup.object({
+    universityId: yup.object().required('required'),
     collegeName: yup.string().required('required'),
     address: yup.string().required('required'),
     city: yup.string().required('required'),

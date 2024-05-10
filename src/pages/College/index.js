@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { SelectFullStateOfThisAPI } from '../../Store/callAPI/selectors';
 import { PrepareEditCollegeObj, addCollegeIntialValues } from './collegeUtils';
-import { getAllCollegesAPI, updateCollegeAPI } from '../../helpers/APIs/CommonAPIs';
+import { getAllCollegesAPI, getAllUniversitiesAPI, updateCollegeAPI } from '../../helpers/APIs/CommonAPIs';
 import { callAPIAction, removeAPIDataAction } from '../../Store/callAPI/actions';
 import { updateCollegeAPIURL } from '../../helpers/APIs/CustomURL';
 import { collegeSchema } from '../../common/data/TableSchema';
@@ -18,6 +18,7 @@ import { ShowErrMsg } from '../../Components/Hooks/UserHooks';
 
 const College = () => {
     const [getAllColleges, setAllColleges] = useState([]);
+    const [universityList, setUniversityList] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
     const [rowsPerPage, setrowsPerPage] = useState(10);
     const [showModal, setShowModal] = useState(false);
@@ -27,6 +28,7 @@ const College = () => {
 
     const GetAllCollegesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllCollegesAPI));
     const UpdateCollegeAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, updateCollegeAPI));
+    const GetAllUniversitiesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllUniversitiesAPI));
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,8 +50,8 @@ const College = () => {
     }, [GetAllCollegesAPIData]);
 
     useEffect(() => {
-        if (UpdateCollegeAPIData?.[DataKey]?.isSuccess) {
-            toast.success('College Updated Successfully'); // 2
+        if (UpdateCollegeAPIData?.[DataKey]?.isSuccess && !isEditMode) {
+            toast.success('College status updated successfully'); // 2
             removeAPIDataAction('updateCollegeAPI');
             const queryParams = {
                 page: pageNumber,
@@ -57,13 +59,27 @@ const College = () => {
             };
             callAPIAction(getAllCollegesAPI, null, null, queryParams);
         } else if (UpdateCollegeAPIData?.[ErrorKey] && !UpdateCollegeAPIData[DataKey]?.isSuccess) {
-            ShowErrMsg(UpdateCollegeAPIData, 'updateUniversityAPI');
+            ShowErrMsg(UpdateCollegeAPIData, 'updateCollegeAPI');
         }
     }, [UpdateCollegeAPIData]);
 
     const handleAddCollege = () => {
         setShowModal(true);
     };
+
+    useEffect(() => {
+        if (GetAllUniversitiesAPIData?.[DataKey]?.isSuccess) {
+            const data = GetAllUniversitiesAPIData?.[DataKey]?.data.map((item) => {
+                return {
+                    ...item,
+                    slno: 1
+                };
+            });
+            setUniversityList(data);
+        } else {
+            setUniversityList([]);
+        }
+    }, [GetAllUniversitiesAPIData]);
 
     const handlePageChange = (p, rows) => {
         const queryParams = {
@@ -83,7 +99,7 @@ const College = () => {
         if (actionType === 'edit') {
             setIsEditMode(true);
             setShowModal(true);
-            setFormIntialValues(PrepareEditCollegeObj(row?.original));
+            setFormIntialValues(PrepareEditCollegeObj(row?.original, universityList));
         }
     };
 
@@ -158,6 +174,7 @@ const College = () => {
                     isEditMode={isEditMode}
                     pageNumber={pageNumber}
                     rowsPerPage={rowsPerPage}
+                    universityList={universityList}
                 />
             )}
         </div>

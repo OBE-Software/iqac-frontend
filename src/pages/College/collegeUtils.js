@@ -38,10 +38,12 @@ export const indianStatesWithId = [
     { id: 27, name: 'Uttarakhand' },
     { id: 28, name: 'West Bengal' }
 ];
-export const PrepareEditCollegeObj = (values) => {
+
+export const PrepareEditCollegeObj = (values, universityList) => {
     const obj = {
         ...values,
-        state: indianStatesWithId.find((i) => i.id === +values.state)
+        universityId: universityList.find((i) => i._id === values.universityId),
+        state: indianStatesWithId.find((i) => i.name === values.state)
     };
 
     return obj;

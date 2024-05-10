@@ -41,7 +41,7 @@ export const indianStatesWithId = [
 export const PrepareEditUniversityObj = (values) => {
     const obj = {
         ...values,
-        state: indianStatesWithId.find((i) => i.id === +values.state)
+        state: indianStatesWithId.find((i) => i.name === values.state)
     };
 
     return obj;

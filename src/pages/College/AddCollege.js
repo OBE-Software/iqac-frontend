@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Col, Label, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import { Formik } from 'formik';
 import Select from 'react-select';
 import { SelectFullStateOfThisAPI } from '../../Store/callAPI/selectors';
-import { createCollegeAPI, getAllCollegesAPI, updateCollegeAPI } from '../../helpers/APIs/CommonAPIs';
+import { createCollegeAPI, getAllCollegesAPI, getAllUniversitiesAPI, updateCollegeAPI } from '../../helpers/APIs/CommonAPIs';
 import InputComponent from '../../Components/Common/InputComponent';
 import { indianStatesWithId } from './collegeUtils';
 import { DataKey, ErrorKey, FetchingKey } from '../../Store/callAPI/allAPIs';
@@ -16,10 +16,13 @@ import { toast } from 'react-toastify';
 import { updateCollegeAPIURL } from '../../helpers/APIs/CustomURL';
 import { AddCollegeSchema } from '../../common/validationSchema/collegeSchema';
 
-const AddCollege = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsPerPage }) => {
+const AddCollege = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsPerPage, universityList }) => {
+    // const [getAllColleges, setAllColleges] = useState([]);
+
     const CreateCollegeAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, createCollegeAPI));
     const GetAllCollegesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllCollegesAPI));
     const UpdateCollegeAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, updateCollegeAPI));
+    const GetAllUniversitiesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllUniversitiesAPI));
 
     const handleSave = (values) => {
         const formData = new FormData();
@@ -31,14 +34,12 @@ const AddCollege = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsPerP
         formData.append('countryCode', values.countryCode);
         formData.append('phoneNumber', values.phoneNumber);
         formData.append('email', values.email);
-        formData.append('universityId', values.universityId);
+        formData.append('universityId', values.universityId._id);
         // formData.append('photos', values.photos ? values.photos : null);
 
         isEditMode
             ? callAPIAction(updateCollegeAPI, updateCollegeAPIURL(values._id), formData)
             : callAPIAction(createCollegeAPI, null, formData);
-
-        // callAPIAction(createUniversityAPI, null, formData);
     };
 
     useEffect(() => {
@@ -280,6 +281,34 @@ const AddCollege = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsPerP
                                         validations={['required']}
                                     />
                                 </Col> */}
+                                <Col xs={12} sm={12} md={4} lg={6} xl={6} xxl={6} className="d-flex mb-4 ">
+                                    <Label className="col-form-label w-40">
+                                        University
+                                        <span className="text-danger">*</span>
+                                    </Label>
+                                    <Select
+                                        id="universityId"
+                                        value={values.universityId}
+                                        onChange={(e) => {
+                                            setFieldValue('universityId', e);
+                                        }}
+                                        className="w-60"
+                                        name="universityId"
+                                        isLoading={GetAllUniversitiesAPIData?.[FetchingKey]}
+                                        options={universityList}
+                                        placeholder="Select"
+                                        components={{
+                                            IndicatorSeparator: () => null
+                                        }}
+                                        styles={{
+                                            ...formSelectDefault,
+                                            ...getErrorBorderForReactSelect(!!errors.universityId && touched.universityId)
+                                        }}
+                                        isClearable
+                                        getOptionLabel={(e) => e.universityName}
+                                        getOptionValue={(e) => e._id}
+                                    />
+                                </Col>
                             </Row>
                             <div className=" float-right d-flex">
                                 <button
