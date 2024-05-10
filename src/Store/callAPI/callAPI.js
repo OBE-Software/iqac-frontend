@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Store } from '../Store';
 // const apiUrl = 'https://api.cadabamsdiagnostics.com/api';
 
-const apiUrl = 'https://19fc-2401-4900-61a8-c976-9c3b-50fa-17c9-40b3.ngrok-free.app/api';
+const apiUrl = 'https://e541-2405-201-d028-1098-60a2-abf3-319f-8e39.ngrok-free.app/api';
 
 // const apiUrl = 'http://localhost:9009/api';
 

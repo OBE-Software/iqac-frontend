@@ -1208,7 +1208,6 @@ const universitiesSchema = [
         Header: 'Name',
         accessor: 'universityName',
         sortable: false,
-        customCell: true,
         width: '10%',
         thClass: 'text-overflow'
     },
@@ -1216,7 +1215,6 @@ const universitiesSchema = [
         Header: 'Phone Number',
         accessor: 'phoneNumber',
         sortable: false,
-        customCell: true,
         width: '10%',
         thClass: 'text-overflow'
     },
@@ -1224,7 +1222,6 @@ const universitiesSchema = [
         Header: 'Email',
         accessor: 'email',
         sortable: false,
-        customCell: true,
         width: '10%',
         thClass: 'text-overflow'
     },
@@ -1232,7 +1229,6 @@ const universitiesSchema = [
         Header: 'Address',
         accessor: 'address',
         sortable: false,
-        customCell: true,
         width: '10%',
         thClass: 'text-overflow'
     },
@@ -1240,7 +1236,6 @@ const universitiesSchema = [
         Header: 'City',
         accessor: 'city',
         sortable: false,
-        customCell: true,
         width: '10%',
         thClass: 'text-overflow'
     },
@@ -1248,7 +1243,6 @@ const universitiesSchema = [
         Header: 'State',
         accessor: 'state',
         sortable: false,
-        customCell: true,
         width: '10%',
         thClass: 'text-overflow'
     },
@@ -1258,7 +1252,6 @@ const universitiesSchema = [
         sortable: false,
         width: '5%',
         thClass: 'text-overflow',
-        customCell: true,
         fieldType: 'status'
     },
     {

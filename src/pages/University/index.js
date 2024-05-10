@@ -10,13 +10,19 @@ import { DataKey, FetchingKey } from '../../Store/callAPI/allAPIs';
 import ActionsTable from '../../Components/Common/ActionsTable';
 import { universitiesSchema } from '../../common/data/TableSchema';
 import UniversitiesHeader from './UniversitiesHeader';
+import AddUniversity from './AddUniversity';
+import { addUniversityIntialValues } from './universityUtils';
 
 const Universities = () => {
     const [getAllUniversities, setAllUniversities] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
     const [rowsPerPage, setrowsPerPage] = useState(10);
-    const GetAllUniversitiesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllUniversitiesAPI));
+    const [showModal, setShowModal] = useState(false);
     const [selectedData, setSelectedData] = useState([]);
+    const [isEditMode, setIsEditMode] = useState(false);
+    const [formIntialValues, setFormIntialValues] = useState({ ...addUniversityIntialValues });
+
+    const GetAllUniversitiesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllUniversitiesAPI));
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -64,6 +70,16 @@ const Universities = () => {
         setSelectedData(rowData);
     };
 
+    const handleAddUniversity = () => {
+        setShowModal(true);
+    };
+
+    const handleCancel = () => {
+        setShowModal(false);
+        setIsEditMode(false);
+        setFormIntialValues({ ...addUniversityIntialValues });
+    };
+
     return (
         <div className="p-5 layout-container">
             <Container fluid className="p-0">
@@ -78,6 +94,11 @@ const Universities = () => {
                             isLink: false
                         }
                     ]}
+                    rightContainer={() => (
+                        <button className="btn btn-soft-primary btn-sm d-flex align-items-center fw-bold" onClick={handleAddUniversity}>
+                            <i class="ri-add-fill fs-16 fw-bold"></i>Add University
+                        </button>
+                    )}
                 />
 
                 <ActionsTable
@@ -102,6 +123,15 @@ const Universities = () => {
                     // isActionEdit={profileData.roleData === 1 ? true : permissionData.actions.edit}
                 />
             </Container>
+            {showModal && (
+                <AddUniversity
+                    onCloseClick={handleCancel}
+                    formValues={formIntialValues}
+                    isEditMode={isEditMode}
+                    pageNumber={pageNumber}
+                    rowsPerPage={rowsPerPage}
+                />
+            )}
         </div>
     );
 };
