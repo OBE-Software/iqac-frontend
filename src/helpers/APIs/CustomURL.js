@@ -125,3 +125,11 @@ export const getGenralNotificationByBranchIdURL = (id) => {
 export const getLogDetailsURL = (id) => {
     return 'logs/' + id;
 };
+
+export const updateUniversityAPIURL = (id) => {
+    return 'universities/' + id + '/update';
+};
+
+export const getUniversityDetailsAPIURL = (id) => {
+    return 'universities/' + id;
+};

@@ -4,7 +4,7 @@ import { Col, Label, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import { Formik } from 'formik';
 import Select from 'react-select';
 import { SelectFullStateOfThisAPI } from '../../Store/callAPI/selectors';
-import { createUniversityAPI, getAllUniversitiesAPI } from '../../helpers/APIs/CommonAPIs';
+import { createUniversityAPI, getAllUniversitiesAPI, updateUniversityAPI } from '../../helpers/APIs/CommonAPIs';
 import InputComponent from '../../Components/Common/InputComponent';
 import { indianStatesWithId } from './universityUtils';
 import { DataKey, ErrorKey, FetchingKey } from '../../Store/callAPI/allAPIs';
@@ -14,11 +14,12 @@ import { AddUniversitySchema } from '../../common/validationSchema/universitySch
 import { callAPIAction, removeAPIDataAction } from '../../Store/callAPI/actions';
 import { ShowErrMsg } from '../../Components/Hooks/UserHooks';
 import { toast } from 'react-toastify';
+import { updateUniversityAPIURL } from '../../helpers/APIs/CustomURL';
 
 const AddUniversity = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsPerPage }) => {
     const CreateUniversityAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, createUniversityAPI));
     const GetAllUniversitiesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllUniversitiesAPI));
-    // const UpdateBranchAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, UpdateBranchAPI));
+    const UpdateUniversityAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, updateUniversityAPI));
 
     const handleSave = (values) => {
         const formData = new FormData();
@@ -32,18 +33,18 @@ const AddUniversity = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsP
         formData.append('email', values.email);
         // formData.append('photos', values.photos ? values.photos : null);
 
-        // isEditMode
-        //     ? callAPIAction(UpdateBranchAPI, getUpdateBranchUrl(values._id), formData)
-        //     : callAPIAction(CreateBranchAPI, null, formData);
+        isEditMode
+            ? callAPIAction(updateUniversityAPI, updateUniversityAPIURL(values._id), formData)
+            : callAPIAction(createUniversityAPI, null, formData);
 
-        callAPIAction(createUniversityAPI, null, formData);
+        // callAPIAction(createUniversityAPI, null, formData);
     };
 
     useEffect(() => {
         if (CreateUniversityAPIData?.[DataKey]?.isSuccess) {
             onCloseClick();
-            toast.success('Branch Created Successfully');
-            removeAPIDataAction('CreateBranchAPI');
+            toast.success('University Created Successfully');
+            removeAPIDataAction('createUniversityAPI');
             const queryParams = {
                 page: pageNumber,
                 pageSize: rowsPerPage
@@ -53,6 +54,21 @@ const AddUniversity = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsP
             ShowErrMsg(CreateUniversityAPIData, 'createUniversityAPI');
         }
     }, [CreateUniversityAPIData]);
+
+    useEffect(() => {
+        if (UpdateUniversityAPIData?.[DataKey]?.isSuccess) {
+            toast.success('Branch Updated Successfully');
+            onCloseClick();
+            removeAPIDataAction('updateUniversityAPI');
+            const queryParams = {
+                page: pageNumber,
+                pageSize: rowsPerPage
+            };
+            callAPIAction(getAllUniversitiesAPI, null, null, queryParams);
+        } else if (UpdateUniversityAPIData?.[ErrorKey] && !UpdateUniversityAPIData[DataKey]?.isSuccess) {
+            ShowErrMsg(UpdateUniversityAPIData, 'updateUniversityAPI');
+        }
+    }, [UpdateUniversityAPIData]);
 
     return (
         <Modal isOpen={true} toggle={onCloseClick} centered={true} size="lg">
@@ -226,7 +242,7 @@ const AddUniversity = ({ onCloseClick, formValues, isEditMode, pageNumber, rowsP
                                             ...getErrorBorderForReactSelect(!!errors.state && touched.state)
                                         }}
                                         getOptionLabel={(e) => e.name}
-                                        getOptionValue={(e) => e.id}
+                                        getOptionValue={(e) => e.name}
                                     />
                                 </Col>
                                 <Col xs={12} sm={12} md={4} lg={6} xl={6} xxl={6} className="d-flex mb-4 ">

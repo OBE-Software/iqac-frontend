@@ -764,6 +764,26 @@ export const createUniversityAPI = {
     storeKey: 'createUniversityAPI'
 };
 
+export const updateUniversityAPI = {
+    customURLNeeded: true,
+    method: 'PATCH',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'updateUniversityAPI'
+};
+
+export const getUniversityDetailsAPI = {
+    customURLNeeded: true,
+    method: 'GET',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'getUniversityDetailsAPI'
+};
+
 const CommonAPIs = [
     GetAllCentersAPI,
     GetAllCentersAPI,
@@ -812,6 +832,7 @@ const CommonAPIs = [
     getAllLogsAPI,
     getLogDetailsAPI,
     getAllUniversitiesAPI,
-    createUniversityAPI
+    createUniversityAPI,
+    getUniversityDetailsAPI
 ];
 export default CommonAPIs;

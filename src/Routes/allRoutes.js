@@ -26,6 +26,7 @@ import ViewLogComponent from '../pages/Logs/ViewLogComponent';
 import HelpVideosPage from '../pages/HelpVideos';
 import { Component } from 'react';
 import Universities from '../pages/University';
+import ViewUniversityComponent from '../pages/University/ViewUniversityComponent';
 
 export const allRoutesOfApplication = (userData) => {
     let routes = [];
@@ -59,6 +60,7 @@ export const allRoutesOfApplication = (userData) => {
             { path: 'logs/:id', Component: ViewLogComponent },
             { path: 'help-vids', Component: HelpVideosPage },
             { path: 'universities', Component: Universities },
+            { path: 'universities/:id', Component: ViewUniversityComponent },
             { path: '*', Component: Cover404 }
         ];
     } else {

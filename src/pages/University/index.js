@@ -11,7 +11,7 @@ import ActionsTable from '../../Components/Common/ActionsTable';
 import { universitiesSchema } from '../../common/data/TableSchema';
 import UniversitiesHeader from './UniversitiesHeader';
 import AddUniversity from './AddUniversity';
-import { addUniversityIntialValues } from './universityUtils';
+import { PrepareEditUniversityObj, addUniversityIntialValues } from './universityUtils';
 
 const Universities = () => {
     const [getAllUniversities, setAllUniversities] = useState([]);
@@ -53,11 +53,15 @@ const Universities = () => {
 
     const handleActionClick = (cell, row, index, actionType) => {
         if (actionType === 'link') {
-            // if (isLead && !checkIsCustomerDataCanView(row.original)) {
-            //     toast.warning('Please fill all the required fields.');
-            //     return;
-            // }
             navigate('/universities/' + row.original._id);
+        }
+        // if (actionType === 'delete') {
+        //     callAPIAction(DeleteBranchAPI, getDeleteBranchUrl(row.original._id));
+        // }
+        if (actionType === 'edit') {
+            setIsEditMode(true);
+            setShowModal(true);
+            setFormIntialValues(PrepareEditUniversityObj(row?.original));
         }
     };
 
