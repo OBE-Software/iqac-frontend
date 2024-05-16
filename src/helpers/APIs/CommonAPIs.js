@@ -825,6 +825,47 @@ export const getCollegeDetailsAPI = {
     storeKey: 'getCollegeDetailsAPI'
 };
 
+// DEPARTMENT APIS ------------------------------------------------------------------------------------------------
+export const getAllDepartmentsAPI = {
+    url: 'departments/all',
+    method: 'GET',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'getAllDepartmentsAPI'
+};
+
+export const getDepartmentDetailsAPI = {
+    customURLNeeded: true,
+    method: 'GET',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'getDepartmentDetailsAPI'
+};
+
+export const createDepartmentAPI = {
+    url: 'colleges/create',
+    method: 'POST',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'createDepartmentAPI'
+};
+
+export const updateDepartmentAPI = {
+    customURLNeeded: true,
+    method: 'PATCH',
+    responseSchema: null,
+    requestSchema: null,
+    queryParamsSchema: null,
+    callErrorPage: false,
+    storeKey: 'updateDepartmentAPI'
+};
+
 const CommonAPIs = [
     GetAllCentersAPI,
     GetAllCentersAPI,

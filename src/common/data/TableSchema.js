@@ -1330,6 +1330,43 @@ const collegeSchema = [
         isEdit: true
     }
 ];
+
+const departmentSchema = [
+    {
+        Header: 'Name',
+        accessor: 'collegeName',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'College Name',
+        accessor: 'collegeId',
+        sortable: false,
+        width: '10%',
+        thClass: 'text-overflow'
+    },
+    {
+        Header: 'Status',
+        accessor: 'status',
+        sortable: false,
+        width: '5%',
+        thClass: 'text-overflow',
+        fieldType: 'status',
+        customCell: true
+    },
+    {
+        Header: 'Actions',
+        accessor: '',
+        customCell: true,
+        fieldType: 'actions',
+        sortable: false,
+        width: '5%',
+        isLink: true,
+        isEdit: true
+    }
+];
+
 export {
     branchSchema,
     centerSchema,
@@ -1353,5 +1390,6 @@ export {
     PermissionRoleSchema,
     loggerSchema,
     universitiesSchema,
-    collegeSchema
+    collegeSchema,
+    departmentSchema
 };
