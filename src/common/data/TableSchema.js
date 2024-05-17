@@ -1334,14 +1334,14 @@ const collegeSchema = [
 const departmentSchema = [
     {
         Header: 'Name',
-        accessor: 'collegeName',
+        accessor: 'departmentName',
         sortable: false,
         width: '10%',
         thClass: 'text-overflow'
     },
     {
         Header: 'College Name',
-        accessor: 'collegeId',
+        accessor: 'college.collegeName',
         sortable: false,
         width: '10%',
         thClass: 'text-overflow'

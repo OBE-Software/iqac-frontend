@@ -847,7 +847,7 @@ export const getDepartmentDetailsAPI = {
 };
 
 export const createDepartmentAPI = {
-    url: 'colleges/create',
+    url: 'departments/create',
     method: 'POST',
     responseSchema: null,
     requestSchema: null,

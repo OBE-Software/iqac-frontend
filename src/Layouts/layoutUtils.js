@@ -17,6 +17,7 @@ import TableViewOutlinedIcon from '@mui/icons-material/TableViewOutlined';
 import DataArrayIcon from '@mui/icons-material/DataArray';
 import DomainOutlinedIcon from '@mui/icons-material/DomainOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import ScienceIcon from '@mui/icons-material/Science';
 
 export const navData = (roleName, profileData) => {
     let navItems = [];
@@ -265,14 +266,14 @@ export const superAdminSidePanelData = [
                 label: 'Roles',
                 link: '/employees-roles',
                 parentId: 'employees'
-            },
-            {
-                id: 'departments',
-                label: 'Departments',
-                link: '/department',
-                parentId: 'employees'
             }
         ]
+    },
+    {
+        id: 'departments',
+        label: 'departments',
+        icon: () => <ScienceIcon fontSize="small" />,
+        link: '/departments'
     },
     {
         id: 'customers',

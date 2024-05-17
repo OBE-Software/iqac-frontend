@@ -5,7 +5,7 @@ import ExportToExcel from '../../Components/Common/ExportToExcel';
 import { exportToJson } from '../../Components/Common/Util';
 import exportFromJSON from 'export-from-json';
 import { callAPIAction } from '../../Store/callAPI/actions';
-import { GetAllEmpDepartmentAPI } from '../../helpers/APIs/CommonAPIs';
+import { getAllDepartmentsAPI } from '../../helpers/APIs/CommonAPIs';
 import { toast } from 'react-toastify';
 
 const DepartmentTableHeader = ({ selectedData }) => {
@@ -20,7 +20,7 @@ const DepartmentTableHeader = ({ selectedData }) => {
                 pageSize: 10
             };
             if (value) queryParams['search'] = value;
-            callAPIAction(GetAllEmpDepartmentAPI, null, null, queryParams);
+            callAPIAction(getAllDepartmentsAPI, null, null, queryParams);
         }
     };
 
@@ -34,17 +34,17 @@ const DepartmentTableHeader = ({ selectedData }) => {
                 page: 1,
                 pageSize: 10
             };
-            callAPIAction(GetAllEmpDepartmentAPI, null, null, queryParams);
+            callAPIAction(getAllDepartmentsAPI, null, null, queryParams);
         }
         setValue(val);
     };
 
     const donwloadExcel = () => {
-        ExportToExcel(selectedData?.length ? selectedData : '', 'branchesData.xlsx');
+        ExportToExcel(selectedData?.length ? selectedData : '', 'departmentsData.xlsx');
     };
 
     const donwloadJson = () => {
-        exportToJson(selectedData?.length ? selectedData : '', 'branchesData.json');
+        exportToJson(selectedData?.length ? selectedData : '', 'departmentsData.json');
     };
 
     const donwloadXML = () => {
@@ -56,7 +56,7 @@ const DepartmentTableHeader = ({ selectedData }) => {
         });
         exportFromJSON({
             data,
-            fineName: 'branchesData.xml',
+            fineName: 'departmentsData.xml',
             exportType: 'xml'
         });
     };

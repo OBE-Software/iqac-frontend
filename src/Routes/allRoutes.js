@@ -66,7 +66,7 @@ export const allRoutesOfApplication = (userData) => {
             { path: 'universities/:id', Component: ViewUniversityComponent },
             { path: 'colleges', Component: College },
             { path: 'colleges/:id', Component: ViewCollegeComponent },
-            { path: 'department', Component: Department },
+            { path: 'departments', Component: Department },
             { path: 'departments/:id', Component: ViewCollegeComponent },
             { path: '*', Component: Cover404 }
         ];
