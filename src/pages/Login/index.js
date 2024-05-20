@@ -45,7 +45,7 @@ const Login = () => {
             if (
                 !navigateToFirstRouteAfterLogin(data?.profileData?.permissionData, addCurrentNavToStore, addCurrentSubNavToStore, navigate)
             ) {
-                toast.error('No Permissions give to the this role.');
+                toast.error('No Permissions given to the this role.');
                 return;
             }
             addUserDataToStore(data);
