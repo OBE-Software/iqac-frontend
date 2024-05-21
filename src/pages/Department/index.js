@@ -20,7 +20,7 @@ import { DataKey, FetchingKey } from '../../Store/callAPI/allAPIs';
 import { callAPIAction } from '../../Store/callAPI/actions';
 import { getDeleteEmpDepartmentURL, getUpdateEmpDepartmentURL, updateDepartmentAPIURL } from '../../helpers/APIs/CustomURL';
 import AddDepartment from './AddDepartment';
-import { addDepartmentIntialValues } from './departmentUtils';
+import { PrepareEditCollegeObj, PrepareEditDepartmentObj, addDepartmentIntialValues } from './departmentUtils';
 
 const Department = () => {
     const [departments, setAllDepartments] = useState([]);
@@ -73,11 +73,7 @@ const Department = () => {
         } else if (actionType === 'edit') {
             setIsEditMode(true);
             setShowModal(true);
-            const obj = {
-                ...row.original
-            };
-
-            setFormIntialValues(obj);
+            setFormIntialValues(PrepareEditDepartmentObj(row?.original, getAllColleges));
         }
     };
 

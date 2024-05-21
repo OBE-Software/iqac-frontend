@@ -18,6 +18,7 @@ import { ShowErrMsg } from '../../Components/Hooks/UserHooks';
 const AddDepartment = ({ onCloseClick, formValues, isEditMode, collegeList, pageNumber, rowsPerPage }) => {
     const CreateDepartmentAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, createDepartmentAPI));
     const GetAllCollegesAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, getAllCollegesAPI));
+    const UpdateDepartmentAPIData = useSelector((state) => SelectFullStateOfThisAPI(state, updateDepartmentAPI));
 
     const handleSave = (values) => {
         // const data = {
@@ -38,7 +39,7 @@ const AddDepartment = ({ onCloseClick, formValues, isEditMode, collegeList, page
         if (CreateDepartmentAPIData?.[DataKey]?.isSuccess) {
             onCloseClick();
             toast.success('Department Created Successfully');
-            removeAPIDataAction('createCollegeAPI');
+            removeAPIDataAction('createDepartmentAPI');
             const queryParams = {
                 page: pageNumber,
                 pageSize: rowsPerPage
@@ -48,6 +49,21 @@ const AddDepartment = ({ onCloseClick, formValues, isEditMode, collegeList, page
             ShowErrMsg(CreateDepartmentAPIData, 'createDepartmentAPI');
         }
     }, [CreateDepartmentAPIData]);
+
+    useEffect(() => {
+        if (UpdateDepartmentAPIData?.[DataKey]?.isSuccess) {
+            toast.success('Department Updated Successfully'); // 1
+            onCloseClick();
+            removeAPIDataAction('updateDepartmentAPI');
+            const queryParams = {
+                page: pageNumber,
+                pageSize: rowsPerPage
+            };
+            callAPIAction(getAllDepartmentsAPI, null, null, queryParams);
+        } else if (UpdateDepartmentAPIData?.[ErrorKey] && !UpdateDepartmentAPIData[DataKey]?.isSuccess) {
+            ShowErrMsg(UpdateDepartmentAPIData, 'updateDepartmentAPI');
+        }
+    }, [UpdateDepartmentAPIData]);
 
     return (
         <Modal isOpen={true} toggle={onCloseClick} centered={true} size="lg">

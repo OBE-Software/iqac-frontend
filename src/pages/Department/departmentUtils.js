@@ -33,7 +33,7 @@ export const indianStatesWithId = [
     { id: 28, name: 'West Bengal' }
 ];
 
-export const PrepareEditCollegeObj = (values, collegeList) => {
+export const PrepareEditDepartmentObj = (values, collegeList) => {
     const obj = {
         ...values,
         collegeId: collegeList.find((i) => i._id === values.collegeId)
