@@ -919,6 +919,8 @@ const CommonAPIs = [
     getCollegeDetailsAPI,
     getAllCollegesAPI,
     updateCollegeAPI,
-    createCollegeAPI
+    createCollegeAPI,
+    createDepartmentAPI,
+    updateDepartmentAPI
 ];
 export default CommonAPIs;
