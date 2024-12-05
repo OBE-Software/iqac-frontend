@@ -1,10 +1,7 @@
 import axios from 'axios';
 import { Store } from '../Store';
-// const apiUrl = 'https://api.cadabamsdiagnostics.com/api';
 
-const apiUrl = 'https://8a28-2406-7400-81-2f87-112f-eff-2550-d71f.ngrok-free.app/api';
-
-// const apiUrl = 'http://localhost:9009/api';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export function getCommonHeaders(afterLogin = true, apiObj = {}) {
     const store = Store.getState();
