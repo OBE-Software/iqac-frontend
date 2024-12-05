@@ -275,7 +275,7 @@ export const getRoleByBranchID = {
     fileUpload: true
 };
 export const LoginAPI = {
-    url: 'internal/login',
+    url: 'internals/login',
     method: 'POST',
     responseSchema: null,
     requestSchema: null,
