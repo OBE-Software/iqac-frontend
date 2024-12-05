@@ -29,6 +29,7 @@ import Universities from '../pages/University';
 import ViewUniversityComponent from '../pages/University/ViewUniversityComponent';
 import College from '../pages/College';
 import ViewCollegeComponent from '../pages/College/ViewCollegeComponent';
+import Department from '../pages/Department';
 
 export const allRoutesOfApplication = (userData) => {
     let routes = [];
@@ -65,6 +66,8 @@ export const allRoutesOfApplication = (userData) => {
             { path: 'universities/:id', Component: ViewUniversityComponent },
             { path: 'colleges', Component: College },
             { path: 'colleges/:id', Component: ViewCollegeComponent },
+            { path: 'departments', Component: Department },
+            { path: 'departments/:id', Component: ViewCollegeComponent },
             { path: '*', Component: Cover404 }
         ];
     } else {

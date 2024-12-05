@@ -141,3 +141,11 @@ export const updateCollegeAPIURL = (id) => {
 export const getCollegeDetailsAPIURL = (id) => {
     return 'colleges/' + id;
 };
+
+export const getDepartmentDetailsAPIURL = (id) => {
+    return 'departments/' + id;
+};
+
+export const updateDepartmentAPIURL = (id) => {
+    return 'departments/' + id + '/update';
+};
