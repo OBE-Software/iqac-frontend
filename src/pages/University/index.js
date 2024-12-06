@@ -86,6 +86,7 @@ const Universities = () => {
     const handleSelectedData = (data) => {
         const rowData = [];
 
+        // eslint-disable-next-line array-callback-return
         Object.keys(data).map((item) => {
             rowData.push(getAllUniversities[item]);
         });

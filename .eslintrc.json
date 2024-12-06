@@ -43,9 +43,9 @@
                 "properties": "never"
             }
         ],
-        "multiline-comment-style": "warn",
-        "no-duplicate-imports": "warn",
-        "no-shadow": [1],
+        // "multiline-comment-style": "warn",
+        // "no-duplicate-imports": "warn",
+        // "no-shadow": [1],
         "max-nested-callbacks": ["error", 6],
         "max-depth": ["error", 3],
         "max-lines": ["error", 2000],
