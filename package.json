@@ -1,5 +1,6 @@
 {
     "name": "iqac-frontend",
+    "homepage": "https://OBE-Software.github.io/iqac-frontend",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -20,6 +21,7 @@
         "env-cmd": "^10.1.0",
         "export-from-json": "^1.7.4",
         "formik": "^2.2.9",
+        "gh-pages": "^6.2.0",
         "jwt-decode": "^4.0.0",
         "lord-icon-element": "^3.3.3",
         "lottie-web": "^5.8.1",
@@ -66,7 +68,9 @@
         "eject": "react-scripts eject",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
-        "format": "prettier --write \"**/*.{js,jsx,json,md,html,css,less,scss}\""
+        "format": "prettier --write \"**/*.{js,jsx,json,md,html,css,less,scss}\"",
+        "predeploy":  "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "babelOptions": {
         "presets": [
