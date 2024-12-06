@@ -1,0 +1,92 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": "react-app",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "settings": {
+        "react": {
+            "version": "^18.0.0"
+        }
+    },
+    "globals": {
+        "$": true,
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "plugins": ["react", "eslint-plugin-no-inline-styles"],
+    "rules": {
+        "react/no-unescaped-entities": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "no-unused-vars": "off",
+        "no-extra-boolean-cast": 0,
+        "no-inline-styles/no-inline-styles": 2,
+        // "linebreak-style": ["warn", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        // "no-console": 2,
+        "camelcase": [
+            2,
+            {
+                "properties": "never"
+            }
+        ],
+        "multiline-comment-style": "warn",
+        "no-duplicate-imports": "warn",
+        "no-shadow": [1],
+        "max-nested-callbacks": ["error", 6],
+        "max-depth": ["error", 3],
+        "max-lines": ["error", 2000],
+        // "no-trailing-spaces": ["error"],
+        "one-var-declaration-per-line": ["error", "always"],
+        "eqeqeq": "error",
+        "no-useless-escape": 0,
+        "no-constant-condition": [
+            "warn",
+            {
+                "checkLoops": false
+            }
+        ],
+        "require-jsdoc": [
+            "error",
+            {
+                "require": {
+                    "FunctionDeclaration": false,
+                    "MethodDefinition": false,
+                    "ClassDeclaration": false,
+                    "ArrowFunctionExpression": false,
+                    "FunctionExpression": false
+                }
+            }
+        ],
+        "spaced-comment": [
+            "error",
+            "always",
+            {
+                "line": {
+                    "markers": ["/"],
+                    "exceptions": ["-", "+"]
+                },
+                "block": {
+                    "markers": ["!"],
+                    "exceptions": ["*"],
+                    "balanced": true
+                }
+            }
+        ],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
+    }
+}

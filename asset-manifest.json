@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/iqac-frontend/static/css/main.3eee4825.css",
+    "main.js": "/iqac-frontend/static/js/main.bc5cfbbe.js",
+    "static/js/206.7e36cf95.chunk.js": "/iqac-frontend/static/js/206.7e36cf95.chunk.js",
+    "static/media/remixicon.svg?t=1590207869815": "/iqac-frontend/static/media/remixicon.1664a258a7e7714f6f8d.svg",
+    "static/media/remixicon.eot?t=1590207869815": "/iqac-frontend/static/media/remixicon.5cb99e6cba5a4619063f.eot",
+    "static/media/remixicon.ttf?t=1590207869815": "/iqac-frontend/static/media/remixicon.f2616f597cf98f38d234.ttf",
+    "static/media/Cityscapes Downtown.png": "/iqac-frontend/static/media/Cityscapes Downtown.1ddc82a3c1d8b88e5686.png",
+    "static/media/remixicon.woff?t=1590207869815": "/iqac-frontend/static/media/remixicon.8d09fa11700ed63cf96e.woff",
+    "static/media/remixicon.woff2?t=1590207869815": "/iqac-frontend/static/media/remixicon.90668f6f9b3c2c18a090.woff2",
+    "static/media/loader.gif": "/iqac-frontend/static/media/loader.174f5cc8f4c47cf07fb8.gif",
+    "static/media/error400-cover.png": "/iqac-frontend/static/media/error400-cover.95db4d41b85436d77ecc.png",
+    "static/media/completed.svg": "/iqac-frontend/static/media/completed.925edd1bd13a6c4f1ccea8db0f6f8da7.svg",
+    "static/media/assign.svg": "/iqac-frontend/static/media/assign.b2da0ccad9ee8af819e20a3c11b65b3d.svg",
+    "static/media/ongoing.svg": "/iqac-frontend/static/media/ongoing.fae0b38d4f8c5d9d203bfb248b87e55b.svg",
+    "index.html": "/iqac-frontend/index.html",
+    "static/media/new.svg": "/iqac-frontend/static/media/new.e92b6536961b650ca50a9ffec7a7c3a3.svg",
+    "static/media/expand-left-right-line.svg": "/iqac-frontend/static/media/expand-left-right-line.ea13b1b9fc9d5217229c64bcefce9021.svg"
+  },
+  "entrypoints": [
+    "static/css/main.3eee4825.css",
+    "static/js/main.bc5cfbbe.js"
+  ]
+}
